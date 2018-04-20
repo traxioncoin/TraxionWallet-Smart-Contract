@@ -8,7 +8,7 @@ contract TraxionWallet is Ownable {
     using SafeMath for uint256;
 
     // Address where funds are collectedt
-    address public wallet = owner;
+    address public wallet = 0x6163286bA933d8a007c02DB6b0fd5A08629d23f8;
   
     // How many token units a buyer gets per wei
     uint256 public rate = 1000;
