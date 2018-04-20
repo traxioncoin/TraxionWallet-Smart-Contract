@@ -1,4 +1,4 @@
-pragma solidity ^0.4.18;
+pragma solidity ^0.4.21;
 
 import "node_modules/zeppelin-solidity/contracts/ownership/Ownable.sol";
 import "node_modules/zeppelin-solidity/contracts/math/SafeMath.sol";
@@ -7,7 +7,7 @@ import "node_modules/zeppelin-solidity/contracts/math/SafeMath.sol";
 contract TraxionWallet is Ownable {
     using SafeMath for uint256;
 
-    // Address where funds are collected
+    // Address where funds are collectedt
     address public wallet = owner;
   
     // How many token units a buyer gets per wei
@@ -25,7 +25,7 @@ contract TraxionWallet is Ownable {
     // Amount of wei raised
     uint256 public weiRaised;
 
-    Event TokenPurchase(address indexed beneficiary, uint256 value, uint256 amount);
+    event TokenPurchase(address indexed beneficiary, uint256 value, uint256 amount);
   
     // -----------------------------------------
     // Crowdsale external interface
@@ -112,7 +112,7 @@ contract TraxionWallet is Ownable {
      * @param _weiAmount Value in wei to be converted into tokens
      * @return Number of tokens that can be purchased with the specified _weiAmount
      */
-    function _getTokenAmount(uint256 _weiAmount) internal pure returns (uint256) {
+    function _getTokenAmount(uint256 _weiAmount) internal view returns (uint256) {
         return _weiAmount.mul(rate);
     }
 

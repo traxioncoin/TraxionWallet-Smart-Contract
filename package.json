@@ -1,19 +1,23 @@
 {
-  "name": "TraxionWallet",
+  "name": "traxionwallet-smart-contract",
   "version": "1.0.0",
-  "description": "",
+  "description": "Ethereum Smart contract for Traxion ICO",
   "main": "truffle-config.js",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
-    "zeppelin-solidity": "^1.7.0"
+    "zeppelin-solidity": "^1.8.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alvinveroy/TraxionWallet-Smart-Contract.git"
+  },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alvinveroy/TraxionWallet-Smart-Contract/issues"
+  },
+  "homepage": "https://github.com/alvinveroy/TraxionWallet-Smart-Contract#readme"
 }
