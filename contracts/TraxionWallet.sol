@@ -91,7 +91,8 @@ contract TraxionWallet is Ownable {
         require(_beneficiary != address(0)); 
         require(_weiAmount != 0);
     
-        require(_weiAmount > min_investment); // Revert if payment is less than 0.40 ETH 
+        require(_weiAmount > min_investment); // Revert if payment is less than 0.40 ETH
+        require(_weiAmount < max_investment); // Revert if payment is greater than 2k ETH 
         require(whitelistedAddr[_beneficiary]); // Revert if investor is not whitelisted
         require(totalInvestment[_beneficiary] < max_investment); // Revert if the investor already spent over 2k ETH investment
         require(weiRaised < hardcap); // Revert if ICO campaign reached Hard Cap
