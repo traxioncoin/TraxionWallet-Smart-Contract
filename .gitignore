@@ -1,4 +1,4 @@
 build/
 build/contracts
-node_modules
-migrations
+node_modules/
+migrations/
