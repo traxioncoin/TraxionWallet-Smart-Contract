@@ -14,10 +14,10 @@ contract TraxionWallet is Ownable {
     uint256 public rate = 1000;
 
     // Minimum investment in wei (0.40 ETH)
-    uint256 public min_investment = 4E17;
+    uint256 public minInvestment = 4E17;
 
     // Maximum investment in wei (2,000 ETH)
-    uint256 public max_investment = 2E21;        
+    uint256 public investmentUpperBounds = 2E21;        
 
     // Hard cap in wei (100,000 ETH)
     uint256 public hardcap = 1E23;    
@@ -91,10 +91,10 @@ contract TraxionWallet is Ownable {
         require(_beneficiary != address(0)); 
         require(_weiAmount != 0);
     
-        require(_weiAmount > min_investment); // Revert if payment is less than 0.40 ETH
+        require(_weiAmount > minIinvestment); // Revert if payment is less than 0.40 ETH
         require(whitelistedAddr[_beneficiary]); // Revert if investor is not whitelisted
-        require(totalInvestment[_beneficiary].add(_weiAmount) < max_investment); // Revert if the investor already spent over 2k ETH investment or payment is greater than 2k ETH
-        require(weiRaised.add(_weiAmount) < hardcap); // Revert if ICO campaign reached Hard Cap
+        require(totalInvestment[_beneficiary].add(_weiAmount) <= investmentUpperBounds); // Revert if the investor already spent over 2k ETH investment or payment is greater than 2k ETH
+        require(weiRaised.add(_weiAmount) <= hardcap); // Revert if ICO campaign reached Hard Cap
     }
 
 
